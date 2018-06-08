@@ -17,12 +17,12 @@ function displayGif() {
         console.log(results)
 
       for (var i = 0; i < results.length; i++) {
-          var movieDiv = $("<div class=pixMovie>");
-          var p = $("<p>").text("rated: " + results[i].rating);
-          var movieImage = $("<img>");
-          movieImage.attr("src", results[i].images.fixed_height.url);
-          movieDiv.append(movieImage).append(p);
-          $("#pixars-view").prepend(movieDiv);
+        var movieDiv = $("<div class=pixMovie>");
+        var p = $("<p>").text("rated: " + results[i].rating);
+        var movieImage = $("<img>");
+        movieImage.attr("src", results[i].images.fixed_height.url);
+        movieDiv.append(movieImage).append(p);
+        $("#pixars-view").prepend(movieDiv);
       }
     });
   });
@@ -45,14 +45,22 @@ $("#add-pixar").on("click", function(event) {
   event.preventDefault();
   var pixar = ["toy story", "a bugs life", "toy story 2", "monsters inc", "finding nemo", "the incredibles", "cars", "Ratatouille", "wall e", "up", "toy story 3", "cars 2", "brave", "monsters university", "inside out", "the good dinosaur", "finding dory", "cars 3", "coco", "the incredibles 2"];
   var a = document.getElementById("pixar-input").value;
-  console.log(a);
-  if (pixar.indexOf(a) === -1) {
-    alert("Thats not a Pixar Movie")
+  if (movies.indexOf(a) !== -1){
+    alert("You have already selected " + a + ". Try again.");
+    $("#pixar-form")[0].reset();
+    console.log(a);
   } else {
-    var movie = $("#pixar-input").val().trim();
-    movies.push(movie);
-    renderButton();
-  }
+    if (pixar.indexOf(a) === -1) {
+      alert(a + " is not a Pixar movie. Try again.");
+      $("#pixar-form")[0].reset();
+    } else {
+      var movie = $("#pixar-input").val().trim();
+      movies.push(movie);
+      renderButton();
+      $("#pixar-form")[0].reset();
+    }
+   
+  } 
 
 });
 
