@@ -36,6 +36,8 @@ body {
     float: left;
     width: 62vw;
     margin-top: 0px;
+    border: 10px solid #154696;
+    border-radius: 20px;
 }
 
 .pixMovie {

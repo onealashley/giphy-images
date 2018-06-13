@@ -1,5 +1,7 @@
 var movies = ["toy story", "up", "wall e"];
 
+$("#pixars-view").hide();
+
 function displayGif() {
   var movie = $(this).attr("data-name");
   console.log(this);
@@ -10,6 +12,7 @@ function displayGif() {
     url: queryURL,
     method: "GET"
   }).then(function(response) {
+    $("#pixars-view").show();
     $("#pixars-view").empty();
 
       var results = response.data;
