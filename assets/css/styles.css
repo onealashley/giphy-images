@@ -32,10 +32,20 @@ body {
     width: 80%;
 }
 
+#pixars-view {
+    float: left;
+    width: 62vw;
+    margin-top: 0px;
+}
+
 .pixMovie {
     float: left;
-    width: 33%;
     margin: 20px;
+}
+
+img {
+    height: 24vw;
+    width: 24vw;
 }
 
 #add-pixar {
@@ -58,6 +68,8 @@ body {
 
 p {
     font-size: 35px;
+    margin-top: -53px;
+    color: white;
 }
 
 hr {
@@ -69,3 +81,25 @@ hr {
 #buttons-view {
     padding: 10px;
 }
+
+@media screen and (max-width: 768px) {
+    .selection-box {
+        clear: both;
+        border: 10px solid #154696;
+        width: 95%;
+        text-align: center;
+        margin: 10px;
+        padding-bottom: 20px;
+        border-radius: 20px;
+    }
+
+    #pixars-view {
+        width: 95%;
+    }
+
+    img {
+        width: 23vw;
+        height: 23vw;
+    }
+}
+
